@@ -4,7 +4,18 @@ A package for students of Panimalar Engineering College
 
 ## Modules
 
-- Validate Roll Number
+### rollno
+
+- isvalid
+
+- getdeptcode
+
+- getdept
+
+
+## Details
+
+- Validate Roll Number 
 
 - Parse Details from Roll Number
 
