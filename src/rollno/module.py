@@ -1,6 +1,8 @@
 import regex
 
 
+# Regex for rollno
+regex_rollno = r'^(20[1-3]{1}[0-9]{1})(PEC)([A-Z]{2})([0-9]{3})$'
 
 def isvalid(rollno):
     """
@@ -8,8 +10,7 @@ def isvalid(rollno):
     Returns True if valid, False otherwise
     """
 
-    # Regex for rollno
-    regex_rollno = r'^20[1-3]{1}[0-9]{1}(PEC)[A-Z]{2}[0-9]{3}$'
+    
 
     # Check if rollno is valid
     if regex.match(regex_rollno, rollno.strip().upper()):
@@ -18,7 +19,45 @@ def isvalid(rollno):
         return False
 
 
-def getdeptcode(rollno):
+def parse(rollno, required):
+
+    """
+    Parse rollno
+    Returns parsed rollno if valid, None otherwise
+    """
+
+    # Check if rollno is valid
+    if isvalid(rollno):
+
+        # Match regex
+        re = regex.match(regex_rollno, rollno.strip().upper())
+
+    
+        # Return required
+        if required == 'year':
+            # Get year
+            year = re.group(1)
+            return year
+        
+        elif required == 'college_code':
+            # Get college code
+            college_code = re.group(2)
+            return college_code
+        elif required == 'department_code':
+            # Get department code
+            department_code = re.group(3)
+            return department_code
+        elif required == 'shortrollno':
+            # Get shortrollno
+            shortrollno = re.group(4)
+            return shortrollno
+        else:
+            return None
+    else:
+        return None
+
+
+def get_dept_code(rollno):
     """
     Get department code from rollno
     Returns department code if valid, None otherwise
@@ -26,17 +65,16 @@ def getdeptcode(rollno):
 
     # Check if rollno is valid
     if isvalid(rollno):
+
         # Get department code
-        department_code=rollno[5:7]
+        department_code = parse(rollno, 'department_code')
 
         return department_code
     else:
         return None
 
 
-
-
-def getdept(rollno):
+def get_dept(rollno):
     """
     Get department from rollno
     Returns department if valid, None otherwise
@@ -50,17 +88,22 @@ def getdept(rollno):
             'IT': 'Information Technology',
             'EC': 'Electronics and Communication Engineering',
             'EE': 'Electrical and Electronics Engineering',
-            'CE': 'Computer Science and Engineering',
-            'CC': 'Computer Science and Communication Engineering',
+            'CE': 'Civil Engineering',
+            'CC': 'Computer and Communication Engineering',
             'ME': 'Mechanical Engineering',
             'AD': 'Artificial Intelligence and Data Science'
         }
 
         # Get department code
-        department_code=getdeptcode(rollno)
+        department_code = parse(rollno, 'department_code')
+
 
         # Get department name and return
-        department=  departments[department_code]
+        try:
+            department=  departments[department_code]
+        except KeyError:
+            return None
+        
         return department
     else:
         return None
