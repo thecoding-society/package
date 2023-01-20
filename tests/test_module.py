@@ -24,6 +24,7 @@ class TestParse(unittest.TestCase):
         self.assertTrue(valid('2021PECCE000'))
         self.assertTrue(valid('2021PECME000'))
         self.assertTrue(valid('2021PECAD000'))
+        self.assertTrue(valid('2021PECCC000'))
 
     def test_correct_year(self):
         self.assertTrue(valid('2018PECCB000'))
