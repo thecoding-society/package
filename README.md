@@ -27,3 +27,11 @@ eg) 2021PECCB101
 PEC - Panimalar Engineering College
 CB - Department (Computer Science and Business Systems)
 101 - Roll Number of Student
+
+
+### Release Steps
+
+- change version number in pyproject.toml
+- add modules to pyproject.toml
+- add dependencies if any
+- add new functions in readme
