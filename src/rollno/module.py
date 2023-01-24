@@ -2,7 +2,7 @@ import regex
 
 
 # Regex for rollno
-regex_rollno = r'^(20[1-3]{1}[0-9]{1})(PEC)([A-Z]{2})([0-9]{3})$'
+regex_rollno = r'^(20[1-3]{1}[0-9]{1})(PEC)([A-Z]{2})([1-9]{1}[0-9]{3})$'
 
 def isvalid(rollno):
     """
