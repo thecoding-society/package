@@ -2,7 +2,7 @@ import regex
 
 
 # Regex for rollno
-regex_rollno = r'^(20[1-3]{1}[0-9]{1})(PEC)([A-Z]{2})([0-9]{3})$'
+regex_rollno = r'^(20[1-3]{1}[0-9]{1})(PEC)([A-Z]{2})([1-9]{1}[0-9]{3})$'
 
 def isvalid(rollno):
     """
@@ -24,7 +24,9 @@ def parse(rollno, required):
     """
     Parse rollno
     Returns parsed rollno if valid, None otherwise
+    Required = year, college_code, department_code, shortrollno
     """
+
 
     # Check if rollno is valid
     if isvalid(rollno):
@@ -43,14 +45,17 @@ def parse(rollno, required):
             # Get college code
             college_code = re.group(2)
             return college_code
+        
         elif required == 'department_code':
             # Get department code
             department_code = re.group(3)
             return department_code
+        
         elif required == 'shortrollno':
             # Get shortrollno
             shortrollno = re.group(4)
             return shortrollno
+        
         else:
             return None
     else:
@@ -77,7 +82,7 @@ def get_dept_code(rollno):
 def get_dept(rollno):
     """
     Get department from rollno
-    Returns department if valid, None otherwise
+    Returns department name if valid, None otherwise
     """
 
     # Check if rollno is valid
