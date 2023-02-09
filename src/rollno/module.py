@@ -112,3 +112,20 @@ def get_dept(rollno):
         return department
     else:
         return None
+    
+    
+def get_year(rollno):
+    """
+    Get year from rollno
+    Returns year if valid, None otherwise
+    """
+
+    # Check if rollno is valid
+    if isvalid(rollno):
+
+        # Get year
+        year = parse(rollno, 'year')
+
+        return year
+    else:
+        return None
