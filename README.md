@@ -12,6 +12,10 @@ A package for students of Panimalar Engineering College
 - parse(rollno, required) => string (or) int
 - get_year(rollno) => int
 
+### cgpa
+
+- TO DO 
+
 
 ## Details
 
