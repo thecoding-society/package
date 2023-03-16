@@ -30,7 +30,9 @@ CB - Department (Computer Science and Business Systems)
 
 ### Release Steps
 
-- change version number in pyproject.toml
+- change version number in pyproject.toml (majorchanges.updates.bugfixes)
 - add modules to pyproject.toml
 - add dependencies if any
 - add new functions in readme
+
+
