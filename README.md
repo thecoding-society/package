@@ -6,10 +6,11 @@ A package for students of Panimalar Engineering College
 
 ### rollno
 
-- isvalid(rollno)
-- get_dept_code(rollno)
-- get_dept(rollno)
-- parse(rollno, required)
+- isvalid(rollno) => boolean
+- get_dept_code(rollno) => string
+- get_dept(rollno) => string
+- parse(rollno, required) => string (or) int
+- get_year(rollno) => int
 
 
 ## Details
