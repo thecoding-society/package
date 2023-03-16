@@ -19,6 +19,8 @@ classifiers = [
 ]
 dependencies = [
     "regex>=2022.10.31",
+    "pytest>=7.2.2",
+    "texttable>=1.6.4",
 ]
 
 
