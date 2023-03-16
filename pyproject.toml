@@ -6,8 +6,8 @@ build-backend = "setuptools.build_meta"
 name = "panimalar"
 version = "0.3.2"
 authors = [
-    { name="The Coding Society", email="codingsociety@psdc.org.in"},
     { name="aviiciii (Laaveshwaran Parthiban)", email="laavesh1@gmail.com" },
+    { name="The Coding Society", email="codingsociety@psdc.org.in"},
 ]
 description = "A package of function created by and for The Coding Society, Panimalar Engineering College"
 readme = "README.md"
